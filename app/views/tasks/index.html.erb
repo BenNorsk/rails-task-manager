@@ -1,0 +1,5 @@
+<% @tasks.each do |t| %>
+  <%= t.title %>
+  <%= t.completed %>
+  <%= link_to "show", "/show/#{t["id"]}" %>
+<% end %>
