@@ -1,5 +1,17 @@
+<div class="container">
 <% @tasks.each do |t| %>
-  <%= t.title %>
-  <%= t.completed %>
-  <%= link_to "show", "/show/#{t["id"]}" %>
+  <div class="task1 rounded">
+    <% if t.completed == true %>
+      <p><i class="fas fa-check-square"></i><%= t.title %></p>
+    <% else %>
+      <p><i class="far fa-check-square"></i><%= t.title %></p>
+
+    <% end %>
+
+    <%= link_to "show", "/show/#{t["id"]}" %>
+    <%= link_to "update", "/update/#{t["id"]}" %>
+    <%= link_to "delete", "/delete/#{t["id"]}" %>
+  </div>
 <% end %>
+<%= link_to "Create a new task", "/new" %>
+</div>
